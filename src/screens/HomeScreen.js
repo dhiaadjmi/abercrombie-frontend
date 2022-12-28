@@ -38,6 +38,7 @@ useEffect(() => {
       dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
     } catch (err) {
       dispatch({ type: 'FETCH_FAIL', payload: err.message });
+      
     }
   };
   fetchData();
