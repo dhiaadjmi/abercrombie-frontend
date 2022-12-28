@@ -1,9 +1,9 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
+import SignupScreen from './screens/SignupScreen';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
-
 import { LinkContainer } from 'react-router-bootstrap';
 import Badge from 'react-bootstrap/Badge';
 import Nav from 'react-bootstrap/Nav';
@@ -31,14 +31,15 @@ function App() {
       <ToastContainer position="bottom-center" limit={1} />
         <header>
           
-          <Navbar bg="dark" variant="dark">
+         {/**<Navbar bg="dark" variant="dark">*/}
+        <Navbar className="navbar">
           <Container className="mt-3">
               <LinkContainer to="/">
                 <Navbar.Brand>Abercrombie & Fitch</Navbar.Brand>
               </LinkContainer>
               <Nav className="me-auto">
                 <Link to="/cart" className="nav-link">
-                  Cart
+                  Panier
                   {cart.cartItems.length > 0 && (
                     <Badge pill bg="danger">
                      
@@ -78,6 +79,7 @@ function App() {
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
+              <Route path="/signup" element={<SignupScreen />} />
               <Route
                 path="/shipping"
                 element={<ShippingAddressScreen />}
